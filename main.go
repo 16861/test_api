@@ -23,9 +23,12 @@ type Address struct {
 
 var people []Person
 
+//GetPeople returns all people records
 func GetPeople(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(people)
 }
+
+//GetPerson returns single person data by id
 func GetPerson(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	for _, item := range people {
@@ -35,6 +38,8 @@ func GetPerson(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
+
+//CreatePerson creates person by recieved in post request data
 func CreatePerson(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	var person Person
@@ -43,6 +48,8 @@ func CreatePerson(w http.ResponseWriter, r *http.Request) {
 	people = append(people, person)
 	json.NewEncoder(w).Encode(people)
 }
+
+//DeletePerson deletes a person by id from people
 func DeletePerson(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	for index, item := range people {

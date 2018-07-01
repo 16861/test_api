@@ -1,0 +1,9 @@
+[Unit]
+Description=My test api
+
+[Service]
+User=vagrant
+ExecStart=/srv/test_api/main
+
+[Install]
+WantedBy=multi-user.target

@@ -30,6 +30,7 @@ func (a *App) Init() {
 	people = append(people, Person{ID: "1", Firstname: "John", Lastname: "Doe", Address: &Address{City: "City X", State: "State X"}})
 	people = append(people, Person{ID: "2", Firstname: "Anjela", Lastname: "Doe", Address: &Address{City: "City Y", State: "State Y"}})
 	people = append(people, Person{ID: "3", Firstname: "Francis", Lastname: "Sunday"})
+	people = append(people, Person{ID: "4", Firstname: "John", Lastname: "Blackwatter"})
 
 	a.Router = mux.NewRouter()
 	a.Router.HandleFunc("/people", GetPeople).Methods("GET")

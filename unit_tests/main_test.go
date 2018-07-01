@@ -58,5 +58,4 @@ func TestCreateNewPerson(t *testing.T) {
 	var m map[interface{}]interface{}
 	json.Unmarshal(response.Body.Bytes(), &m)
 
-	t.Errorf("fail!")
 }
